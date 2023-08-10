@@ -1,0 +1,17 @@
+<p>todo works!</p>
+<div>Todo :
+    <input type="text" #textInput [(ngModel)]="textInput2" [ngClass]="testNgClass"
+        [value]="nowDate | date : 'yyyy-MM-dd'" />
+    <button>送出</button>
+</div>
+<div>{{textInput2}} ||| {{textInput.value}}</div>
+
+<div>
+    <div *ngFor="let data of dataList; let recordIndex = index">
+        <input type="checkbox" [checked]="data.checked">
+        <span>{{recordIndex + 1}} : </span>
+        <span>{{data.value}}</span>
+        <br />
+        <hr />
+    </div>
+</div>
