@@ -1,16 +1,18 @@
 <p>todo works!</p>
 <div>Todo :
-    <input type="text" #textInput [(ngModel)]="textInput2" [ngClass]="testNgClass"
-        [value]="nowDate | date : 'yyyy-MM-dd'" />
-    <button>送出</button>
+    <input type="text" #textInput [(ngModel)]="textInput2" [value]="nowDate | date : 'yyyy-MM-dd'" />
+    <button (click)="send($event)">送出</button>
 </div>
+<!-- datepipe(format , timezone, local  ) -->
+<div>{{nowDate | date : 'yyyy-MM-dd HHmmss': '+0800'}}</div>
+<div>{{nowDate | date : 'yyyy-MM-dd HHmmss': '+0000'}}</div>
 <div>{{textInput2}} ||| {{textInput.value}}</div>
 
 <div>
     <div *ngFor="let data of dataList; let recordIndex = index">
-        <input type="checkbox" [checked]="data.checked">
+        <input type="checkbox" [(ngModel)]="data.checked">
         <span>{{recordIndex + 1}} : </span>
-        <span>{{data.value}}</span>
+        <span [ngClass]="data.checked?'red':''">{{data.value}}</span>
         <br />
         <hr />
     </div>

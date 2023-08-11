@@ -5,18 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { TodoService } from './todo/todo.service';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TodoComponent
+    AppComponent
   ],
   imports: [
+    TodoModule,
     BrowserModule,
-    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
