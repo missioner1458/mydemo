@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodoComponent } from './todo.component';
 import { TodoService } from './todo.service';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     TodoService],

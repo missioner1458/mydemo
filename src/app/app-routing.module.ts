@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TodoComponent } from './todo/todo.component';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: "/dashboard", pathMatch: 'full' },
+  { path: 'dashboard', component: TodoComponent, },
+  { path: 'page1', component: Page1Component },
+  { path: 'page2', component: Page2Component },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: true,
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
