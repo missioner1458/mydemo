@@ -3,7 +3,7 @@
 <a routerLink="/page1">page1#</a>
 <a routerLink="/page2">page2#</a>
 
-<button *ngFor="let data of [{} , {} , {} ] ; let i = index" [routerLink]="'/page'+i">page{{i}}</button>
+<button *ngFor="let data of [{} , {} , {} ] ; let i = index" [routerLink]="'/page'+i+'/'+i">page{{i}}</button>
 <div>Todo :
     <input type="text" #textInput [(ngModel)]="textInput2" [value]="nowDate | date : 'yyyy-MM-dd'" />
     <button (click)="send($event)">送出</button>

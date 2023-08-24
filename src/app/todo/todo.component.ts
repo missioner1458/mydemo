@@ -18,6 +18,7 @@ export class TodoComponent implements OnInit, OnChanges, DoCheck, AfterContentIn
 
   ngOnInit(): void {
 
+    this.todoserveice.todo = { number: 4, title: "3" };
 
     console.log(`ngOnInit  : {} : {}`, Date.now());
     console.log(`datepipe 2 : ${this.datePipe.transform(Date.now(), 'yyyy-MM-dd')}`);
